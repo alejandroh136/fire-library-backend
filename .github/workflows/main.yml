@@ -23,7 +23,7 @@ jobs:
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
           source_ref: ${{github.ref}}
-          target-branch: 'dev'
+          target_branch: 'dev'
           commit_message_template: '[Automated] merged {source_ref} into target {target_branch}'
   # This workflow contains a single job called "build"
   #build:
