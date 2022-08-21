@@ -31,7 +31,8 @@ namespace FireLibrary2.Controllers
         {
 
             List<BookDTO> result = new();
-
+            Book book1 = new Book("1785034677", "The Martian", "Ebury Publishing", "English", 171, 2, "Andy Weir", "So you want to lieve on Mars. Perhaps its the rugged terrain, beutiful scenery, or vast..", "Six days ago, astronaut Mark Watney became one of the fist people to walk on Mars", 5, 5);
+            result.Add(BookDTO.CreateBookDTO(book1));
             /*try
             {
                 result = await _repo.GetAllBooksAsync();
