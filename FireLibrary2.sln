@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FireLibrary2", "FireLibrary2\FireLibrary2.csproj", "{CA2708B9-43B9-4BCF-8ADD-8E2626B0F307}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FireLibrary.Test", "FireLibrary.Test\FireLibrary.Test.csproj", "{123D21D2-1434-42BE-A24A-13C846DB32F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA2708B9-43B9-4BCF-8ADD-8E2626B0F307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA2708B9-43B9-4BCF-8ADD-8E2626B0F307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA2708B9-43B9-4BCF-8ADD-8E2626B0F307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA2708B9-43B9-4BCF-8ADD-8E2626B0F307}.Release|Any CPU.Build.0 = Release|Any CPU
+		{123D21D2-1434-42BE-A24A-13C846DB32F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{123D21D2-1434-42BE-A24A-13C846DB32F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{123D21D2-1434-42BE-A24A-13C846DB32F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{123D21D2-1434-42BE-A24A-13C846DB32F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4CA69982-83E9-42A6-9102-A929228E47C0}
+	EndGlobalSection
+EndGlobal
