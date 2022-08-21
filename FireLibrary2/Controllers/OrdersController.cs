@@ -30,7 +30,7 @@ namespace FireLibrary2.Controllers
         [HttpPost] //takes an order DTO, creates an order.
         public async Task<ActionResult> PostOrder(OrderDTO request)
         {
-
+            /*
             try
             {
                 string result = await _repo.PostOrderAsync(request);
@@ -61,13 +61,15 @@ namespace FireLibrary2.Controllers
             }
 
             return Ok();
+            */
+            return StatusCode(500);
         }
 
         [HttpGet] //gets a specific order
         public async Task<ActionResult<OrderDTO>> GetOrder(int id)
         {
             OrderDTO result = new();
-
+            /*
             try
             {
                 result = await _repo.GetOrderAsync(id);
@@ -84,12 +86,14 @@ namespace FireLibrary2.Controllers
             }
 
             return Ok(result);
-
+            */
+            return StatusCode(500);
         }
 
         [HttpPost("return/{id}")]
         public async Task<ActionResult> ReturnBooks(OrderDTO request)
         {
+            /*
             try
             {
                 await _repo.ReturnBooksAsync(request);
@@ -101,11 +105,14 @@ namespace FireLibrary2.Controllers
 
             //Returns 200OK along with returned book count. 
             return Ok($"You have returned {request.Books.Count()} books!");
+            */
+            return Ok();
         }
 
         [HttpPost("returnbook")]
         public async Task<ActionResult> ReturnOneBook(ReturnDTO bookToReturn)
         {
+            /*
             try
             {
                 await _repo.ReturnOneBookAsync(bookToReturn);
@@ -117,6 +124,8 @@ namespace FireLibrary2.Controllers
 
             //Returns 200OK along with returned book count. 
             return Ok("Book returned!");
+            */
+            return Ok();
         }
 
     }

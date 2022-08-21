@@ -32,7 +32,7 @@ namespace FireLibrary2.Controllers
 
             List<BookDTO> result = new();
 
-            try
+            /*try
             {
                 result = await _repo.GetAllBooksAsync();
 
@@ -49,6 +49,8 @@ namespace FireLibrary2.Controllers
             
 
             return result;
+            */
+            return NotFound()
         }
 
         // GET: api/Books/5
@@ -56,7 +58,7 @@ namespace FireLibrary2.Controllers
         public async Task<ActionResult<BookDTO>> GetBook(string isbn)
         {
             BookDTO result = new();
-
+            /*
             try
             {
                 result = await _repo.GetBookAsync(isbn);
@@ -72,14 +74,15 @@ namespace FireLibrary2.Controllers
                 return StatusCode(500);
             }
             Console.WriteLine("We are in Books Controller");
-            return result;
+            return result;*/
+            return NotFound();
         }
 
         [HttpGet("search/genre")]
         public async Task<ActionResult<List<BookDTO>>> SearchBooksGenre(string genre)
         {
             List<BookDTO> result = new();
-
+            /*
             try
             {
                 result = await _repo.SearchBooksGenreAsync(genre.ToLower());
@@ -97,13 +100,15 @@ namespace FireLibrary2.Controllers
 
 
             return result;
+            */
+            return NotFound();
         }
 
         [HttpGet("search/author")]
         public async Task<ActionResult<List<BookDTO>>> SearchBooksAuthor(string author)
         {
             List<BookDTO> result = new List<BookDTO>();
-
+            /*
             try
             {
                 result = await _repo.SearchBooksAuthorAsync(author.ToLower());
@@ -120,13 +125,15 @@ namespace FireLibrary2.Controllers
             }
 
             return result;
+            */
+            return NotFound();
         }
 
         [HttpGet("search/title")]
         public async Task<ActionResult<List<BookDTO>>> SearchBooksTitle(string title)
         {
             List<BookDTO> result = new List<BookDTO>();
-
+            /*
             try
             {
                 result = await _repo.SearchBooksTitleAsync(title.ToLower());
@@ -143,6 +150,8 @@ namespace FireLibrary2.Controllers
             }
 
             return result;
+            */
+            return NotFound();
         }
 
 

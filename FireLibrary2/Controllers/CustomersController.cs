@@ -31,7 +31,7 @@ namespace FireLibrary2.Controllers
         public async Task<ActionResult<IEnumerable<CustomerDTO>>> GetCustomers()
         {
             List<CustomerDTO> result = new();
-
+            /*
             try
             {
                 result = await _repo.GetAllCustomersAsync();
@@ -49,6 +49,8 @@ namespace FireLibrary2.Controllers
 
 
             return result;
+            */
+            return NotFound();
         }
 
         // GET: api/Customers/5
@@ -56,7 +58,7 @@ namespace FireLibrary2.Controllers
         public async Task<ActionResult<CustomerDTO>> GetCustomer(int id)
         {
             CustomerDTO result = new();
-          
+            /*
             try
             {
                 result = await _repo.GetCustomerByIdAsync(id);
@@ -74,6 +76,8 @@ namespace FireLibrary2.Controllers
             Console.WriteLine("We are in Customer controller");
             Console.WriteLine(result.CustomerId);
             return Ok(result);
+            */
+            return NotFound();
         }
 
         //Get all orders for customer
@@ -81,7 +85,7 @@ namespace FireLibrary2.Controllers
         public async Task<ActionResult<IEnumerable<OrderDTO>>> GetCustomerOrders(int customerId)
         {
             List<OrderDTO> result = new();
-
+            /*
             try
             {
                 result = await _repo.GetCustomerOrdersASync(customerId);
@@ -98,6 +102,8 @@ namespace FireLibrary2.Controllers
             }
 
             return Ok(result);
+            */
+            return NotFound();
         }
 
         // PUT: api/Customers/5
@@ -105,6 +111,7 @@ namespace FireLibrary2.Controllers
         [HttpPatch("{id}")]
         public async Task<IActionResult> UpdateCustomer(CustomerDTO request)
         {
+            /*
             try
             {
                 await _repo.UpdateCustomer(request);
@@ -118,6 +125,8 @@ namespace FireLibrary2.Controllers
             }
 
             return Ok();
+            */
+            return StatusCode(500);
         }
 
     }

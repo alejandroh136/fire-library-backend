@@ -35,17 +35,21 @@ namespace FireLibrary2.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
+            /*
             if (_context.Users == null)
             {
                 return NotFound();
             }
             return await _context.Users.ToListAsync();
+            */
+            return NotFound();
         }
 
         // GET: api/Users/5
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
+            /*
             if (_context.Users == null)
             {
                 return NotFound();
@@ -58,6 +62,8 @@ namespace FireLibrary2.Controllers
             }
 
             return user;
+            */
+            return NotFound();
         }
 
 
@@ -66,6 +72,7 @@ namespace FireLibrary2.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<string>> Register(UserDTO request)
         {
+            /*
             if (_context.Users == null)
             {
                 return Problem("Entity set 'DataContext.Users'  is null.");
@@ -97,14 +104,15 @@ namespace FireLibrary2.Controllers
 
 
             return Ok("User and customer profiles created!");
-
+            */
+            return Ok();
         }
 
         [HttpPost("login")]
         public async Task<ActionResult<LoginDTO>> Login(UserDTO request)
         {
             LoginDTO result = new();
-
+            /*
             if (_context.Users == null)
             {
                 return Problem("Entity set 'DataContext.Users' is null.");
@@ -129,7 +137,8 @@ namespace FireLibrary2.Controllers
 
             //return token + customerId + time for token to live as LoginDTO object
             return Ok(result);
-
+            */
+            return Ok();
         }
 
 
