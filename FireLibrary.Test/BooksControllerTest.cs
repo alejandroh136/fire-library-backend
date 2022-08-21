@@ -102,7 +102,7 @@ namespace FireLibrary.Test
         {
             List<BookDTO> book = new List<BookDTO>();
             book.Add(new BookDTO { Isbn = "12345", Genre = "genre" });
-            book.Add(new BookDTO{Isbn = "98765", Genre = 'genre'});
+            book.Add(new BookDTO { Isbn = "98765", Genre = "genre" });
 
             //Console.WriteLine("The Book test started");
 
