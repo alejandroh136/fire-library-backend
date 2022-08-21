@@ -7,7 +7,7 @@ on:
     branches: [ "dev" ]
 
 jobs:
-  build-dev:
+  build-dev: #this way this and merge-branch actually run in parallel
 
     runs-on: ubuntu-latest
 
@@ -23,7 +23,7 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-  merge-branch:
+  merge-branch: #with this one
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -34,7 +34,7 @@ jobs:
           target_branch: 'main'
           commit_message_template: '[Automated] merged {source_ref} into target {target_branch}'
           
-  build-main:
+  build-main: #and this one
 
     runs-on: ubuntu-latest
 
