@@ -87,7 +87,9 @@ namespace FireLibrary2.Controllers
 
             return Ok(result);
             */
-            return StatusCode(500);
+            //return StatusCode(500);
+            return StatusCode(200);
+
         }
 
         [HttpPost("return/{id}")]

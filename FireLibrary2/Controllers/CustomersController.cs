@@ -77,7 +77,8 @@ namespace FireLibrary2.Controllers
             Console.WriteLine(result.CustomerId);
             return Ok(result);
             */
-            return NotFound();
+            //return NotFound();
+            return StatusCode(204);
         }
 
         //Get all orders for customer
