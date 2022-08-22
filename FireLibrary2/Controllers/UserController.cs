@@ -23,16 +23,19 @@ namespace FireLibrary2.Controllers
     {
         private readonly DataContext _context;
         private readonly IConfiguration _configuration;
+        private UserDTO user = new UserDTO();
 
         public UsersController(IConfiguration configuration, DataContext context)
         {
             _configuration = configuration;
             _context = context;
+            this.user.Username = "username";
+            this.user.Password = "password";
         }
 
 
         // GET: api/Users
-        [HttpGet]
+        /*[HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             /*
@@ -41,9 +44,9 @@ namespace FireLibrary2.Controllers
                 return NotFound();
             }
             return await _context.Users.ToListAsync();
-            */
+            
             return NotFound();
-        }
+        }*/
 
         // GET: api/Users/5
         [HttpGet("{id}")]
@@ -69,7 +72,7 @@ namespace FireLibrary2.Controllers
 
         // POST: api/UsersControllerTest
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost("register")]
+        /*[HttpPost("register")]
         public async Task<ActionResult<string>> Register(UserDTO request)
         {
             /*
@@ -104,9 +107,9 @@ namespace FireLibrary2.Controllers
 
 
             return Ok("User and customer profiles created!");
-            */
+            
             return Ok();
-        }
+        }*/
 
         [HttpPost("login")]
         public async Task<ActionResult<LoginDTO>> Login(UserDTO request)
@@ -138,6 +141,10 @@ namespace FireLibrary2.Controllers
             //return token + customerId + time for token to live as LoginDTO object
             return Ok(result);
             */
+            if(request.Password == this.user.Password){
+                result.CustomerId = 1;//tmpCust.CustomerId;
+                result.Token = CreateToken(user);
+            }
             return Ok();
         }
 
@@ -170,7 +177,8 @@ namespace FireLibrary2.Controllers
             }
         }
 
-        private string CreateToken(User user)
+        //private string CreateToken(User user)
+        private string CreateToken(UserDTO user)
         {
             List<Claim> claims = new List<Claim>
             {
